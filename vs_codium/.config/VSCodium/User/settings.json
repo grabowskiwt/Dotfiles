@@ -41,5 +41,9 @@
     "notebook.output.fontSize": 16,
     "markdown.preview.fontSize": 16,
     "git.enableSmartCommit": true,
-    "python.languageServer": "Pylance"
+    "python.languageServer": "Jedi",
+    "python.defaultInterpreterPath": "/usr/bin/python",
+    "editor.detectIndentation": false,
+    "explorer.confirmDragAndDrop": false,
+    "clangd.path": "/home/witekg/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/22.1.0/clangd_22.1.0/bin/clangd"
 }

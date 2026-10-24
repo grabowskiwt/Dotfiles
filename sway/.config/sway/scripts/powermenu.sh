@@ -10,7 +10,7 @@
 
 options="⏻ Power Off\n Reboot\n⏾ Suspend\n󰗽 Logout"
 
-choice=$(echo -e "$options" | fuzzel --dmenu --prompt="Power  " -l 4 -w 25)
+choice=$(echo -e "$options" | fuzzel --dmenu --prompt="Power ❯ " -l 4 -w 25)
 
 case "$choice" in
     "⏻ Power Off")
