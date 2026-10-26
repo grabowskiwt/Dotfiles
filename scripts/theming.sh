@@ -21,7 +21,7 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-green'
 gsettings set org.gnome.desktop.interface cursor-theme 'breeze_cursors'
-gsettings set org.gnome.desktop.interface cursor-size 24
+gsettings set org.gnome.desktop.interface cursor-size 32
 gsettings set org.gnome.desktop.interface font-name 'IBM Plex Sans 18'
 
 echo "Setting flatpaks theme.."
