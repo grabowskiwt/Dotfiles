@@ -28,13 +28,4 @@ else
     echo "Done with color scripts."
 fi
 
-if [ -f "$BIN_DIR/rickroll" ]; then
-    echo "--- Rickroll already installed. Skipping. ---"
-else
-    echo "Installing rickrollrc..."
-    curl -fsSL https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh -o "$BIN_DIR/rickroll"
-    chmod +x "$BIN_DIR/rickroll"
-    echo "Done with rickroll."
-fi
-
 echo "All tasks finished."
