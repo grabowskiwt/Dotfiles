@@ -83,9 +83,9 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="${LS_COLORS/di=01;34/di=01;32}"
     export LS_COLORS="${LS_COLORS/di=34/di=32}"
-    LS_COLORS=$(echo "$LS_COLORS" | tr ':' '\n' | grep -vE '^(tw|ow)=' | tr '\n' ':')
+    LS_COLORS=$(echo "$LS_COLORS" | tr ':' '\n' | grep -vE '^(tw|ow|di|ln|ex|fi)=' | tr '\n' ':')
     LS_COLORS="${LS_COLORS%:}"
-    export LS_COLORS="${LS_COLORS}:tw=30;42:ow=30;42"
+    export LS_COLORS="${LS_COLORS}:tw=30;42:ow=30;42:di=01;34:ln=01;36:ex=01;32:fi=00"
 fi
 
 # Enhanced Tab-Completion Menu
