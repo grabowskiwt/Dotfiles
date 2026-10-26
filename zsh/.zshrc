@@ -9,8 +9,8 @@
 
 # --- EXPORTS && ENV ---
 export TERM="xterm-256color"
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export LANG=en_US.UTF-8
 export KEYTIMEOUT=1 # Reduce delay
 
@@ -52,8 +52,6 @@ setopt PROMPT_SUBST         # Variables in prompts (git prompt)
 path=(
   $HOME/.bin
   $HOME/.local/bin
-  $HOME/.emacs.d/bin
-  $HOME/.config/emacs/bin/
   $HOME/Applications
   /var/lib/flatpak/exports/bin/
   $HOME/.spicetify
@@ -176,12 +174,12 @@ setopt PROMPT_SUBST
 precmd() { vcs_info } # Run vcs_info before every prompt to get git status
 
 # Git Status
-zstyle ':vcs_info:git:*' formats ' %F{yellow}%f%K{yellow}%F{black}%b%f%k%F{yellow}%f'
+zstyle ':vcs_info:git:*' formats ' %F{16}%f%K{16}%F{0}%b%f%k%F{16}%f'
 zstyle ':vcs_info:*' enable git
 
 # Main Prompt 
 PROMPT='%F{2}%f%K{2}%F{black} %~ %f%k%F{2}%f${vcs_info_msg_0_}
-%(?.%F{3}.%F{1})%# ❯%f '
+%(?.%F{16}.%F{1})%# ❯%f '
 RPROMPT='%F{242} %T%f' # Clock on the right
 
 # --- ALIASES ---
