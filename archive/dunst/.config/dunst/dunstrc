@@ -1,0 +1,37 @@
+#           _ _       _
+# __      _(_) |_ ___| | ____ _
+# \ \ /\ / / | __/ _ \ |/ / _` |
+#  \ V  V /| | ||  __/   < (_| |
+#   \_/\_/ |_|\__\___|_|\_\__, |
+#                         |___/
+# Witek3023
+# https://github.com/Witek3023
+
+[global]
+    # Ogólne ustawienia wyglądu powiadomień
+    font = JetBrainsMono Nerd Font Mono 16
+    frame_width = 2
+    frame_color = "#6a9955"       # Niebieski akcent jako ramka (regular4)
+    highlight = "#6a9955"
+    separator_color = frame
+    width = (0, 450)
+
+[urgency_low]
+    # Niska ważność - stonowane tło i tekst
+    background = "#1e1e1e"        # Główny background
+    foreground = "#808080"        # Szary tekst (bright0)
+    timeout = 4
+
+[urgency_normal]
+    # Normalna ważność - standardowe kolory
+    background = "#1e1e1e"        # Główny background
+    foreground = "#d4d4d4"        # Główny foreground
+    timeout = 10
+
+[urgency_critical]
+    # Krytyczne powiadomienia - czerwony akcent
+    background = "#1e1e1e"        # Główny background
+    foreground = "#f44747"        # Czerwony tekst (regular1)
+    frame_color = "#f14c4c"       # Jasnoczerwona ramka (bright1)
+    timeout = 0
+
