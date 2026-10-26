@@ -1,0 +1,18 @@
+[mgr]
+border_symbol = "│"
+border_style  = { fg = "16" }
+
+[mode]
+normal_main = { fg = "black", bg = "green", bold = true }
+normal_alt  = { fg = "white", bg = "black", bold = true }
+
+select_main = { fg = "black", bg = "yellow", bold = true }
+select_alt  = { fg = "white", bg = "black", bold = true }
+
+unset_main  = { fg = "black", bg = "red", bold = true }
+unset_alt   = { fg = "white", bg = "black", bold = true }
+
+[indicator]
+current = { fg = "black", bg = "green", bold = true }
+parent  = { fg = "white", bg = "black" }
+preview = { underline = true }
