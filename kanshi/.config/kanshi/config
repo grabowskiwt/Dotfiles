@@ -7,21 +7,21 @@
 # Witek3023
 # https://github.com/Witek3023
 
-profile laptop_standalone {
-    output "eDP-1" enable
-}
-
-profile pc_default {
+profile pc-default {
     output "DP-2" mode 2560x1440@144Hz position 0,0
     output "HDMI-A-2" position -1080,0 transform 90
 }
 
-profile laptop_docked_single {
+profile laptop-standalone {
+    output "eDP-1" enable
+}
+
+profile laptop-docked-single {
     output "DP-3" mode 2560x1440@100Hz position 0,0 enable
     output "eDP-1" disable
 }
 
-profile laptop_docked_dual {
+profile laptop-docked-dual {
     output "DP-3" mode 2560x1440@100Hz position 0,0
     output "eDP-1" enable position 2560,0
 }
