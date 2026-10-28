@@ -100,6 +100,7 @@ autoload -U select-word-style
 select-word-style bash
 
 # --- KEYBINDINGS ---
+bindkey -e                              # Emacs mode
 bindkey '^[[Z' reverse-menu-complete    # Shift-Tab to go backwards in completion menu
 bindkey '^[[1;5C' forward-word          # Ctrl + Right
 bindkey '^[[1;5D' backward-word         # Ctrl + Left
