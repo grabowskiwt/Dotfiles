@@ -72,6 +72,9 @@ trash = [
 	{ run = "ya pub trash-restore --list %S", desc = "Restore selected files" },
 	{ run = "ya pub trash-empty --list %S",   desc = "Empty trash bin" },
 ]
+imv = [
+    { run = 'imv -b 282828 %s', orphan = true, desc = "imv", for = "linux" },
+]
 
 [open]
 rules = [
@@ -80,7 +83,7 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "image/*", use = [ "imv", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Code
