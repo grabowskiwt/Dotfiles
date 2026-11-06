@@ -1,9 +1,9 @@
-//           _ _       _    
-// __      _(_) |_ ___| | ____ _ 
+//           _ _       _
+// __      _(_) |_ ___| | ____ _
 // \ \ /\ / / | __/ _ \ |/ / _` |
 //  \ V  V /| | ||  __/   < (_| |
 //   \_/\_/ |_|\__\___|_|\_\__, |
-//                         |___/ 
+//                         |___/
 // Witek3023
 // https://github.com/Witek3023
 //
@@ -431,11 +431,11 @@ user_pref("browser.ping-centre.telemetry", false);
 user_pref("app.update.auto", false);
 
 // PREF: Extended battery life & power efficiency tweaks
-user_pref("browser.sessionstore.interval", 120000); // Save session state every 2 mins instead of 1 min to reduce disk writes & CPU wakeups
-user_pref("dom.hiddenbackgroundtabs.enabled", true); // Throttle timers in background tabs to save CPU & battery
-user_pref("dom.min_background_timeout_value", 2000); // Increase background timer minimum timeout
-user_pref("browser.low_res_paint", true); // Use low-res paint during scaling/scrolling to save power
-user_pref("dom.battery.enabled", false); // Privacy: disable Battery API fingerprinting and power tracking
+user_pref("browser.sessionstore.interval", 120000);
+user_pref("dom.hiddenbackgroundtabs.enabled", true);
+user_pref("dom.min_background_timeout_value", 2000);
+user_pref("browser.low_res_paint", true);
+user_pref("dom.battery.enabled", false);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
