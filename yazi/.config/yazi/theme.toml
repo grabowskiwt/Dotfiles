@@ -1,7 +1,18 @@
+#           _ _       _
+# __      _(_) |_ ___| | ____ _
+# \ \ /\ / / | __/ _ \ |/ / _` |
+#  \ V  V /| | ||  __/   < (_| |
+#   \_/\_/ |_|\__\___|_|\_\__, |
+#                         |___/
+# Witek3023
+# https://github.com/Witek3023
+
+# File manager UI layout and border styling
 [mgr]
 border_symbol = "│"
 border_style  = { fg = "16" }
 
+# Mode indicators (normal, select, unset)
 [mode]
 normal_main = { fg = "black", bg = "green", bold = true }
 normal_alt  = { fg = "white", bg = "black", bold = true }
@@ -12,6 +23,7 @@ select_alt  = { fg = "white", bg = "black", bold = true }
 unset_main  = { fg = "black", bg = "red", bold = true }
 unset_alt   = { fg = "white", bg = "black", bold = true }
 
+# Navigation and preview indicators
 [indicator]
 current = { fg = "black", bg = "green", bold = true }
 parent  = { fg = "white", bg = "black" }

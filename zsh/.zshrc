@@ -14,6 +14,11 @@ export VISUAL="nvim"
 export LANG=en_US.UTF-8
 export KEYTIMEOUT=1 # Reduce delay
 
+# --- THEMING ---
+export QT_QPA_PLATFORMTHEME=qt5ct
+export XCURSOR_THEME=breeze_cursors
+export XCURSOR_SIZE=32
+
 # --- XDG PATHS ---
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
@@ -175,12 +180,12 @@ setopt PROMPT_SUBST
 precmd() { vcs_info } # Run vcs_info before every prompt to get git status
 
 # Git Status
-zstyle ':vcs_info:git:*' formats ' %F{16}%f%K{16}%F{0}%b%f%k%F{16}%f'
+zstyle ':vcs_info:git:*' formats ' %F{3}%f%K{3}%F{0}%b%f%k%F{3}%f'
 zstyle ':vcs_info:*' enable git
 
 # Main Prompt 
 PROMPT='%F{2}%f%K{2}%F{black} %~ %f%k%F{2}%f${vcs_info_msg_0_}
-%(?.%F{16}.%F{1})%# ❯%f '
+%(?.%F{3}.%F{1})%# ❯%f '
 RPROMPT='%F{242} %T%f' # Clock on the right
 
 # --- ALIASES ---

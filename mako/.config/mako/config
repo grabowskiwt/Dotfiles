@@ -1,3 +1,12 @@
+#           _ _       _
+# __      _(_) |_ ___| | ____ _
+# \ \ /\ / / | __/ _ \ |/ / _` |
+#  \ V  V /| | ||  __/   < (_| |
+#   \_/\_/ |_|\__\___|_|\_\__, |
+#                         |___/
+# Witek3023
+# https://github.com/Witek3023
+
 font=JetBrainsMono Nerd Font Mono 18
 background-color=#282828
 text-color=#ebdbb2
@@ -17,8 +26,8 @@ max-icon-size=48
 width=400
 
 [urgency=high]
-border-color=#cc241d
-text-color=#cc241d
+border-color=#d65d0e
+text-color=#d65d0e
 default-timeout=0
 border-size=3
 
