@@ -1,10 +1,19 @@
--- ── Opcje podstawowe ─────────────────────────────────────────────────────────
-vim.opt.number         = true       -- numery linii
+--           _ _       _
+-- __      _(_) |_ ___| | ____ _
+-- \ \ /\ / / | __/ _ \ |/ / _` |
+--  \ V  V /| | ||  __/   < (_| |
+--   \_/\_/ |_|\__\___|_|\_\__, |
+--                         |___/
+-- Witek3023
+-- https://github.com/Witek3023
+
+-- ── Basic Options ─────────────────────────────────────────────────────────
+vim.opt.number         = true       -- line numbers
 vim.opt.relativenumber = false
-vim.opt.cursorline     = true       -- podświetl aktywną linię
-vim.opt.termguicolors  = true       -- pełna paleta kolorów
-vim.opt.signcolumn     = "yes"      -- kolumna ikon po lewej (diagnostyka, git)
-vim.opt.scrolloff      = 8          -- zawsze 8 linii nad/pod kursorem
+vim.opt.cursorline     = true       -- highlight active line
+vim.opt.termguicolors  = true       -- full color palette
+vim.opt.signcolumn     = "yes"      -- sign column on the left (diagnostics, git)
+vim.opt.scrolloff      = 8          -- always keep 8 lines above/below cursor
 
 vim.opt.tabstop        = 4
 vim.opt.shiftwidth     = 4
@@ -21,22 +30,22 @@ vim.opt.splitbelow     = true
 vim.opt.updatetime     = 250
 vim.opt.timeoutlen     = 400
 
-vim.g.mapleader        = " "        -- leader = spacja
+vim.g.mapleader        = " "        -- leader = space
 
--- ── Skróty ───────────────────────────────────────────────────────────────────
+-- ── Keymaps ───────────────────────────────────────────────────────────────────
 local map = function(mode, lhs, rhs, desc)
     vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc })
 end
 
-map("n", "<leader>w", "<cmd>w<cr>",  "Zapisz")
-map("n", "<leader>q", "<cmd>q<cr>",  "Zamknij")
-map("n", "<Esc>",     "<cmd>nohlsearch<cr>", "Wyczyść podświetlenie")
+map("n", "<leader>w", "<cmd>w<cr>",  "Save")
+map("n", "<leader>q", "<cmd>q<cr>",  "Close")
+map("n", "<Esc>",     "<cmd>nohlsearch<cr>", "Clear search highlight")
 
--- przemieszczanie po liniach wizualnych (przy zawijaniu)
+-- move through visual lines (when wrapping)
 map("n", "j", "gj")
 map("n", "k", "gk")
 
--- motyw ładujemy przed lazy żeby nie było flashowania
+-- load theme before lazy to prevent flashing
 -- vim.cmd("colorscheme gruvbox")
 
 -- ── Bootstrap lazy.nvim ──────────────────────────────────────────────────────
@@ -51,21 +60,21 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- ── Pluginy ──────────────────────────────────────────────────────────────────
+-- ── Plugins ──────────────────────────────────────────────────────────────────
 require("lazy").setup({
     -- theme
     {
         "ellisonleao/gruvbox.nvim",
-        priority = 1000, -- ładuje się przed wszystkimi innymi wtyczkami (brak flashowania)
+        priority = 1000, -- load before all other plugins (no flash)
         config = function()
-            vim.o.background = "dark" -- lub "light"
+            vim.o.background = "dark" -- or "light"
             require("gruvbox").setup({
                 transparent_mode = false,
             })
             vim.cmd("colorscheme gruvbox")
         end,
     },
-    -- pasek statusu
+    -- statusline
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -74,26 +83,26 @@ require("lazy").setup({
                 options = {
                     theme = {
                         normal = {
-                            a = { fg = "#0d0e1a", bg = "#ff4d9e", gui = "bold" },
-                            b = { fg = "#e4e4f4", bg = "#2d2e4d" },
-                            c = { fg = "#a8a9c8", bg = "#1a1b2e" },
+                            a = { fg = "#282828", bg = "#689d6a", gui = "bold" },
+                            b = { fg = "#ebdbb2", bg = "#3c3836" },
+                            c = { fg = "#ebdbb2", bg = "#282828" },
                         },
                         insert = {
-                            a = { fg = "#0d0e1a", bg = "#7dffaf", gui = "bold" },
+                            a = { fg = "#282828", bg = "#d65d0e", gui = "bold" },
                         },
                         visual = {
-                            a = { fg = "#0d0e1a", bg = "#b4a7e8", gui = "bold" },
+                            a = { fg = "#282828", bg = "#8ec07c", gui = "bold" },
                         },
                         replace = {
-                            a = { fg = "#0d0e1a", bg = "#ffd06b", gui = "bold" },
+                            a = { fg = "#282828", bg = "#fe8019", gui = "bold" },
                         },
                         command = {
-                            a = { fg = "#0d0e1a", bg = "#8de8ff", gui = "bold" },
+                            a = { fg = "#282828", bg = "#fabd2f", gui = "bold" },
                         },
                         inactive = {
-                            a = { fg = "#6b6c8a", bg = "#0d0e1a" },
-                            b = { fg = "#6b6c8a", bg = "#0d0e1a" },
-                            c = { fg = "#6b6c8a", bg = "#0d0e1a" },
+                            a = { fg = "#928374", bg = "#282828" },
+                            b = { fg = "#928374", bg = "#282828" },
+                            c = { fg = "#928374", bg = "#282828" },
                         },
                     },
                     component_separators = { left = "│", right = "│" },
@@ -112,56 +121,52 @@ require("lazy").setup({
         end,
     },
 
-    -- lepsze kolorowanie składni
+    -- better syntax highlighting
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         opts = {
             ensure_installed = {
                 "lua", "python", "javascript", "typescript",
-                "bash", "json", "yaml", "toml", "markdown",
-                "c", "cpp", "rust", "go",
+                "html", "css", "json", "yaml", "bash", "markdown",
             },
-            highlight    = { enable = true },
-            indent       = { enable = true },
-            auto_install = true,
+            highlight = { enable = true },
+            indent = { enable = true },
         },
     },
 
-    -- podświetlenie nawiasów
+    -- file explorer
     {
-        "HiPhish/rainbow-delimiters.nvim",
+        "nvim-tree/nvim-tree.lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("rainbow-delimiters.setup").setup({})
+            require("nvim-tree").setup()
+            vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file tree" })
         end,
     },
 
-    -- wygładzanie wcięć (pionowe linie)
+    -- fuzzy finder
     {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("ibl").setup({
-                indent  = { char = "▏" },
-                scope   = { enabled = true },
-            })
+            local builtin = require("telescope.builtin")
+            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+            vim.keymap.set("n", "<leader>fg", builtin.live_grep,  { desc = "Live grep" })
+            vim.keymap.set("n", "<leader>fb", builtin.buffers,    { desc = "Buffers" })
+            vim.keymap.set("n", "<leader>fh", builtin.help_tags,  { desc = "Help tags" })
         end,
     },
 
-    -- automatyczne zamykanie nawiasów/cudzysłowów
+    -- auto pairs for brackets and quotes
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = true,
     },
 
-    -- komentowanie (gcc = komentuj linię, gc + ruch w trybie wizualnym)
-    {
-        "numToStr/Comment.nvim",
-        config = true,
-    },
-
-    -- podgląd hex kolorów w kodzie (#ffffff, rgb(...))
+    -- preview hex colors in code (#ffffff, rgb(...))
     {
         "NvChad/nvim-colorizer.lua",
         config = function()
@@ -170,7 +175,7 @@ require("lazy").setup({
     },
 
 }, {
-    -- opcje lazy.nvim
+    -- lazy.nvim options
     ui = { border = "rounded" },
     checker = { enabled = false },
 })
