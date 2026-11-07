@@ -406,9 +406,8 @@ user_pref("media.eme.enabled", true);
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.messaging-system.whatsNewPanel.enabled", false);
 
-// PREF: Website contrast and smooth scrolling
+// PREF: Website contrast
 user_pref("browser.display.document_color_use", 0);
-user_pref("general.smoothScroll", true);
 
 // PREF: Preferred browser languages
 user_pref("intl.accept_languages", "pl, en-US, en");
