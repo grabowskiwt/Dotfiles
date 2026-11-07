@@ -279,8 +279,8 @@ user_pref("browser.urlbar.scotchBonnet.enableOverride", false);
 // PREF: enable container tabs
 user_pref("privacy.userContext.enabled", true);
 
-// PREF: disable Firefox Sync
-user_pref("identity.fxaccounts.enabled", false);
+// PREF: enable Firefox Sync
+user_pref("identity.fxaccounts.enabled", true);
 
 // PREF: disable the Firefox View tour from popping up
 user_pref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
